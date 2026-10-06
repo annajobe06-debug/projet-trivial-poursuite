@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: silver
+    tables:
+      - name: questions_enriched
+        meta:
+          external_location: "read_parquet('./silver/questions_enriched_*.parquet', union_by_name=true)"
