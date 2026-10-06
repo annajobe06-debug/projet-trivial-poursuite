@@ -116,8 +116,8 @@ def enrich_dataset(df: pd.DataFrame, prompt_version: str) -> pd.DataFrame:
             "num_options": len(options),
         })
 
-        if (idx + 1) % 20 == 0:
-            logger.info(f"[{prompt_version}] Progression : {idx + 1}/{total}")
+        if len(results) % 20 == 0:
+            logger.info(f"[{prompt_version}] Progression : {len(results)}/{total}")
 
     return df.merge(pd.DataFrame(results), on="question_id", how="left")
 
@@ -148,5 +148,5 @@ def main() -> None:
     logger.info(f"[{args.prompt_version}] Taux d'erreurs de parsing : {taux_erreur_parsing:.1f}%")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()

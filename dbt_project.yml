@@ -1,0 +1,16 @@
+name: 'projet_trivial_poursuite'
+version: '1.0.0'
+config-version: 2
+
+profile: 'trivial_poursuite'
+
+model-paths: ["src/models"]
+
+models:
+  trivial_poursuite:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    mart:
+      +materialized: table
