@@ -1,0 +1,24 @@
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Configuration locale
+profiles.yml
+.user.yml
+
+# dbt
+target/
+logs/
+dbt_packages/
+
+# Base DuckDB locale
+gold/
+
+# Données générées localement
+silver/
+bronze/
+
+# Fichiers système / IDE
+.vscode/
+.DS_Store
